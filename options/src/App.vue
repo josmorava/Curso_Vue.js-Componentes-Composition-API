@@ -1,6 +1,7 @@
 <template>
   <div class="">
     <ModalComponent />
+    {{texto}}
   </div>
 
 </template>
@@ -8,10 +9,12 @@
 <script>
 //import MenuComponent from './components/MenuComponent.vue'
 import ModalComponent from './components/ModaComponent.vue'
+import base from './mixins/base'
 
 
 export default {
   name: 'App',
+  mixins:[base],
   components: {
     ModalComponent,
   },
