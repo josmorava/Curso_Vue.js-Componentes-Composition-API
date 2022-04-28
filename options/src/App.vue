@@ -1,22 +1,21 @@
 <template>
   <div class="">
-    <ModalComponent />
-    {{texto}}
+    <UserRepoComponent user="Jose" />
   </div>
 
 </template>
 
 <script>
 //import MenuComponent from './components/MenuComponent.vue'
-import ModalComponent from './components/ModaComponent.vue'
-import base from './mixins/base'
-
+//import ModalComponent from './components/ModaComponent.vue'
+//import base from './mixins/base'
+import UserRepoComponent from './components/UserRepoComponent.vue'
 
 export default {
   name: 'App',
-  mixins:[base],
+  //mixins:[base],
   components: {
-    ModalComponent,
+    UserRepoComponent
   },
 }
 
