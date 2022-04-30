@@ -12,8 +12,11 @@ export default {
       required: true,
     },
   },
-  setup(props, ctx){
-    //Se comporta como un hook de ciclo de vida, se ejecuta antes 
+  setup(){
+    //Se comporta como un hook de ciclo de vida, se ejecuta antes
+    return{
+      //repositories,
+    }
   },
   data(){
     return{
