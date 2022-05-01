@@ -1,30 +1,27 @@
 <template>
   <div class="">
     Home
-    <p>{{ text }}</p>
-    <p>{{ counter }}</p>
-
+  <p>{{firstName}} {{lastName}} / dos variables</p>
+  <p>{{fullName}} / funcion computed</p>
   </div>
 </template>
 
 <script>
-import { ref, watch } from 'vue'
-//permite crear una referencia reactiva a una variable
+import {ref, computed} from 'vue'
 
 export default {
   setup() {
-    const text = ref('Hola Crack')
-    const counter = ref(0)
-
-    setInterval(() => counter.value++, 500)
+    const firstName = ref('Jose')
+    const lastName = ref('Morales')
     
-    watch(counter, (valor, anterior) => {
-      console.log(valor, anterior)
+    const fullName = computed(()=>{
+      return `${firstName.value} ${lastName.value}`
     })
 
     return {
-      text,
-      counter,
+     firstName,
+     lastName,
+     fullName
     }
   }
 }
