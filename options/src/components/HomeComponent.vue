@@ -3,11 +3,13 @@
     Home
   <p>{{firstName}} {{lastName}} / dos variables</p>
   <p>{{fullName}} / funcion computed</p>
+  <p>{{username}} / provide-inject</p>
+
   </div>
 </template>
 
 <script>
-import {toRefs,computed} from 'vue'
+import {toRefs,computed, inject} from 'vue'
 //Forma de usar props
 
 
@@ -19,6 +21,8 @@ export default {
   },
 
   setup(props, {expose}) {
+
+    const username = inject('username')
     
     const {firstName, lastName} =toRefs(props)
     
@@ -31,7 +35,8 @@ export default {
     })
     
     return {
-     fullName
+     fullName,
+     username
     }
   }
 }

@@ -8,12 +8,18 @@
 <script>
 import HomeComponent from './components/HomeComponent.vue'
 
+import {provide} from 'vue' 
+
 export default {
   name: 'App',
   //mixins:[base],
   components: {
     HomeComponent
   },
+
+  setup() {
+    provide('username', 'JosMoraVa')
+  }
 }
 
 </script>
