@@ -1,6 +1,6 @@
 <template>
   <div class="">
-    <home-component />
+    <home-component first-name='Jose' last-name='Varon'/>
   </div>
 
 </template>

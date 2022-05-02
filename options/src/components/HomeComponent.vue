@@ -7,20 +7,30 @@
 </template>
 
 <script>
-import {ref, computed} from 'vue'
+import {toRefs,computed} from 'vue'
+//Forma de usar props
+
 
 export default {
-  setup() {
-    const firstName = ref('Jose')
-    const lastName = ref('Morales')
+
+  props:{
+    firstName: String,
+    lastName: String,
+  },
+
+  setup(props, {expose}) {
+    
+    const {firstName, lastName} =toRefs(props)
     
     const fullName = computed(()=>{
       return `${firstName.value} ${lastName.value}`
     })
 
+    expose({
+      fullName,
+    })
+    
     return {
-     firstName,
-     lastName,
      fullName
     }
   }
