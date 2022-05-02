@@ -4,12 +4,13 @@
   <p>{{firstName}} {{lastName}} / dos variables</p>
   <p>{{fullName}} / funcion computed</p>
   <p>{{username}} / provide-inject</p>
+  <button ref="btn">Click</button>
 
   </div>
 </template>
 
 <script>
-import {toRefs,computed, inject} from 'vue'
+import {ref ,toRefs,computed, inject, watch} from 'vue'
 //Forma de usar props
 
 
@@ -33,10 +34,17 @@ export default {
     expose({
       fullName,
     })
+
+    const btn = ref(null)
+
+    watch(btn, (valor)=>{
+      console.log(valor)
+    })
     
     return {
      fullName,
-     username
+     username,
+     btn
     }
   }
 }
